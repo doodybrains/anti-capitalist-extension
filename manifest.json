@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "anti-capitalist extension",
+  "version": "1.0",
+  "description": "beginning anti-capitalist extension",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+      "https://i1.wp.com/awesci.com/wp-content/uploads/2014/04/pink-color-makes-you-weaker.jpg?resize=672%2C372"
+  ],
+  "permissions": [
+      "http://localhost:8080/"
+  ]
+}
