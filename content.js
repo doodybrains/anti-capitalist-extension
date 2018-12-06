@@ -1,20 +1,33 @@
+let wholeArray = [];
+
 var ads = document.getElementsByClassName('ad');
 var cads = document.getElementsByClassName('c-ad');
+var containers = document.getElementsByClassName('ad-container');
+var topBanners = document.getElementsByClassName('top-banner-ad-container');
+var adAware = document.getElementsByClassName('ad-awareness-wrapper');
+var adWire = document.getElementsByClassName('ad-wireframe-wrapper');
+var iframe = document.querySelectorAll('iframe');
 
-for (var i = 0; i < ads.length; i++) {
-  changeElement(ads[i]);
-}
+wholeArray.push(ads, cads, containers, topBanners, adAware, adWire, iframe);
 
-for (var i = 0; i < cads.length; i++) {
-  changeElement(cads[i]);
+for (var i = 0; i < wholeArray.length; i++) {
+  changeElement(wholeArray[i]);
 }
 
 function changeElement(el) {
-  console.log(el);
-  el.addEventListener("mouseover", mouseOver);
+  if (el) {
+    console.log("FOUND", el.length, "ADVERTISEMENTS");
+
+    for (var i = 0; i < el.length; i++) {
+      if ( el[i].addEventListener ) {
+        el[i].addEventListener("mouseover", mouseOver);
+      }
+    }
+  }
 }
 
 function mouseOver() {
+  alert('AAHHH!')
   sendPost();
 }
 
