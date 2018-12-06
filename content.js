@@ -7,8 +7,9 @@ var topBanners = document.getElementsByClassName('top-banner-ad-container');
 var adAware = document.getElementsByClassName('ad-awareness-wrapper');
 var adWire = document.getElementsByClassName('ad-wireframe-wrapper');
 var iframe = document.querySelectorAll('iframe');
+var adSlot = document.getElementsByClassName('ad-slot-container');
 
-wholeArray.push(ads, cads, containers, topBanners, adAware, adWire, iframe);
+wholeArray.push(ads, cads, containers, topBanners, adAware, adWire, iframe, adSlot);
 
 for (var i = 0; i < wholeArray.length; i++) {
   changeElement(wholeArray[i]);
