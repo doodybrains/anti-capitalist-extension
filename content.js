@@ -28,22 +28,29 @@ function changeElement(el) {
 }
 
 function mouseOver() {
-  alert('AAHHH!')
   sendPost();
 }
 
 function sendPost(dat) {
-  $.ajax({
-    url: "http://localhost:8080/posts",
-    type: "POST",
-    data: JSON.stringify({
-      "data": "We can bring to birth a new world from the ashes of the old ",
-    }),
-    error: function(e) {
-      console.log(e);
-    },
-    dataType: "json",
-    cache: false, 
-    contentType: "application/json; charset=utf-8"
-  });
+  
+
+  let timer;
+
+  clearTimeout(timer);
+  timer = setTimeout(function() {
+      console.log('sent');
+      $.ajax({
+        url: "http://localhost:8080/posts",
+        type: "POST",
+        data: JSON.stringify({
+          "data": "We can bring to birth a new world from the ashes of the old ",
+        }),
+        error: function(e) {
+          console.log(e);
+        },
+        dataType: "json",
+        cache: false, 
+        contentType: "application/json; charset=utf-8"
+      });
+  }, 100);
 }
