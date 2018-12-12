@@ -6,10 +6,13 @@ var containers = document.getElementsByClassName('ad-container');
 var topBanners = document.getElementsByClassName('top-banner-ad-container');
 var adAware = document.getElementsByClassName('ad-awareness-wrapper');
 var adWire = document.getElementsByClassName('ad-wireframe-wrapper');
-var iframe = document.querySelectorAll('iframe');
+var iframe = document.getElementsByTagName('iframe');
 var adSlot = document.getElementsByClassName('ad-slot-container');
+var jsBanners = document.getElementsByClassName('js-top-banner');
+var google = document.getElementsByClassName('GoogleActiveViewClass');
 
-wholeArray.push(ads, cads, containers, topBanners, adAware, adWire, iframe, adSlot);
+
+wholeArray.push(ads, cads, containers, topBanners, adAware, adWire, iframe, adSlot, jsBanners, google);
 
 for (var i = 0; i < wholeArray.length; i++) {
   changeElement(wholeArray[i]);
@@ -32,8 +35,6 @@ function mouseOver() {
 }
 
 function sendPost(dat) {
-  
-
   let timer;
 
   clearTimeout(timer);
